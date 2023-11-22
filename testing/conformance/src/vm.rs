@@ -762,6 +762,17 @@ where
     }
 }
 
+impl<M, C, K> FluenceOps for TestKernel<K>
+where
+    C: CallManager<Machine = TestMachine<M>>,
+    K: Kernel<CallManager = TestCallManager<C>>,
+    M: Machine,
+{
+    fn run_randomx(&mut self, k: u32, h: u32) -> Result<bool> {
+        todo!()
+    }
+}
+
 /// Wrap a `ResourceLimiter` and collect statistics.
 pub struct TestLimiter<L> {
     inner: L,

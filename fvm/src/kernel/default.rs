@@ -1037,6 +1037,14 @@ where
     }
 }
 
+impl<C> FluenceOps for DefaultKernel<C>
+where
+C: CallManager {
+    fn run_randomx(&mut self, k: u32, h: u32) -> Result<bool> {
+        return Ok(true)
+    }
+}
+
 fn catch_and_log_panic<F: FnOnce() -> Result<R> + UnwindSafe, R>(context: &str, f: F) -> Result<R> {
     match panic::catch_unwind(f) {
         Ok(v) => v,

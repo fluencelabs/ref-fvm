@@ -18,6 +18,7 @@ mod context;
 mod crypto;
 mod debug;
 mod event;
+mod fluence;
 mod gas;
 mod ipld;
 mod network;
@@ -324,6 +325,8 @@ pub fn bind_syscalls(
 
     linker.bind("gas", "charge", gas::charge_gas)?;
     linker.bind("gas", "available", gas::available)?;
+
+    linker.bind("fluence", "run_randomx", fluence::run_randomx)?;
 
     // Ok, this singled-out syscall should probably be in another category.
     linker.bind("send", "send", send::send)?;

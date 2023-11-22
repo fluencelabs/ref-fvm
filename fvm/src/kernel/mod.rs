@@ -61,6 +61,7 @@ pub trait Kernel:
     + GasOps
     + MessageOps
     + NetworkOps
+    + FluenceOps
     + RandomnessOps
     + SelfOps
     + SendOps
@@ -371,4 +372,8 @@ pub trait LimiterOps {
 pub trait EventOps {
     /// Records an event emitted throughout execution.
     fn emit_event(&mut self, raw_evt: &[u8]) -> Result<()>;
+}
+
+pub trait FluenceOps {
+    fn run_randomx(&mut self, k: u32, h:u32) -> Result<bool>;
 }
