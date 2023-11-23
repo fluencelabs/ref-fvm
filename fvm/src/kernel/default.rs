@@ -1041,6 +1041,7 @@ impl<C> FluenceOps for DefaultKernel<C>
 where
 C: CallManager {
     fn run_randomx(&mut self, k: u32, h: u32) -> Result<bool> {
+        println!("run randomx with {k} and {h}");
         return Ok(true)
     }
 }
