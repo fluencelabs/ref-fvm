@@ -1040,9 +1040,10 @@ where
 impl<C> FluenceOps for DefaultKernel<C>
 where
 C: CallManager {
-    fn run_randomx(&mut self, k: u32, h: u32) -> Result<bool> {
-        println!("run randomx with {k} and {h}");
-        return Ok(true)
+    fn run_randomx(&mut self, k: [u8; 60], h: Vec<u8>) -> Result<[u8; 32]> {
+        println!("run randomx with {k:?} and {h:?}");
+        let result: [u8; 32] = [1,2,3,4,5,6, 1,2,3,4,5,6, 1,2,3,4,5,6, 1,2,3,4,5,6, 1,2,3,4,5,6, 1 ,2];
+        return Ok(result)
     }
 }
 

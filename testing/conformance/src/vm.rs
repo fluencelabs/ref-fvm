@@ -768,7 +768,7 @@ where
     K: Kernel<CallManager = TestCallManager<C>>,
     M: Machine,
 {
-    fn run_randomx(&mut self, k: u32, h: u32) -> Result<bool> {
+    fn run_randomx(&mut self, k: [u8; 60], h: Vec<u8>) -> Result<[u8; 32]> {
         todo!()
     }
 }

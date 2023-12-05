@@ -20,6 +20,9 @@ fvm_ipld_blockstore = { version = "0.1", path = "../blockstore" }
 # depdendency is needed to enable the features of the re-export.
 multihash = { version = "0.16.1", default-features = false, features = ["blake2b", "multihash-impl"] }
 
+backtrace = "0.3"
+tracing = "0.1.40"
+
 [features]
 default = []
 
